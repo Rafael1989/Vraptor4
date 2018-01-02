@@ -26,16 +26,12 @@
 						<td>${produto.nome}</td>
 						<td>${produto.valor}</td>
 						<td>${produto.quantidade}</td>
-						<td><a class="btn btn-primary" href="<c:url value="/produto/remove?produto.id=${produto.id}"/>">Remover</a></td>
+						<td><a href="<c:url value="/produto/remove?produto.id=${produto.id}"/>">Remover</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-		<a class="btn btn-primary" href="<c:url value="/produto/formulario"/>">Adicionar</a>
-		<a class="btn btn-primary" href="<c:url value="/produto/listaXML"/>">Listar em formato XML</a>
-		<c:if test="${not empty mensagem}">
-			<div class="alert alert-success">${mensagem}</div>
-		</c:if>
+		<a href="<c:url value="/produto/formulario"/>">Adicionar</a>
 	</div>
 </body>
 </html>
