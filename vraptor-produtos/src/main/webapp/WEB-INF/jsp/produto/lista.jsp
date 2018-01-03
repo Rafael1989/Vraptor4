@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Lista de produtos do ${usuarioLogado}</h1>
+		<h1>Lista de produtos do ${usuarioLogado.usuario.nome}</h1>
 		<table class="table table-stripped table-hover table-bordered">
 			<thead>
 				<tr>

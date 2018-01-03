@@ -4,6 +4,7 @@ import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.annotations.Public;
 import br.com.caelum.vraptor.dao.UsuarioDao;
 import br.com.caelum.vraptor.model.Usuario;
 import br.com.caelum.vraptor.model.UsuarioLogado;
@@ -31,10 +32,12 @@ public class LoginController {
 		this(null,null,null,null);
 	}
 	
+	@Public
 	public void formulario() {
 		
 	}
 	
+	@Public
 	public void autentica(Usuario usuario) {
 		if(!dao.existe(usuario)) {
 			validator.add(new I18nMessage("erro", "login.invalido"));
