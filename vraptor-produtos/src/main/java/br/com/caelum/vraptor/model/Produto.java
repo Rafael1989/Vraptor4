@@ -3,6 +3,12 @@ package br.com.caelum.vraptor.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+
 
 
 @Entity
@@ -11,10 +17,13 @@ public class Produto {
 	@GeneratedValue @Id
 	private Long id;
 
+	@NotEmpty
+	@NotNull
 	private String nome;
 	
 	private Double valor;
 	
+	@Min(value=0,message="{produto.quantidade.negativa}")
 	private Integer quantidade;
 
 	public Produto() {
