@@ -1,5 +1,6 @@
 package br.com.caelum.vraptor.dao;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
 import br.com.caelum.vraptor.model.Usuario;
@@ -8,13 +9,13 @@ public class UsuarioDao {
 
 	private final EntityManager em;
 	
-//	@Inject
+    @Inject
 	public UsuarioDao(EntityManager em) {
 		this.em = em;
 	}
 	
 	@Deprecated
-	public UsuarioDao() {
+	UsuarioDao() {
 		this(null); // para uso do CDI
 	}
 	
@@ -29,5 +30,5 @@ public class UsuarioDao {
 	public void salva(Usuario usuario) {
 		em.persist(usuario);
 	}
-
+	
 }
